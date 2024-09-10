@@ -3,22 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B5CD3E22C907189001D4BCF /* MindMyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E12C907189001D4BCF /* MindMyAppApp.swift */; };
-		9B5CD3E42C907189001D4BCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E32C907189001D4BCF /* ContentView.swift */; };
+		9B5CD3E22C907189001D4BCF /* MindMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E12C907189001D4BCF /* MindMyApp.swift */; };
+		9B5CD3E42C907189001D4BCF /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E32C907189001D4BCF /* ListView.swift */; };
 		9B5CD3E62C90718A001D4BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E52C90718A001D4BCF /* Assets.xcassets */; };
 		9B5CD3E92C90718A001D4BCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5CD3E82C90718A001D4BCF /* Preview Assets.xcassets */; };
+		9B5CD3F32C90725E001D4BCF /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3F22C90725E001D4BCF /* ListViewModel.swift */; };
+		9B5CD3F62C9077DA001D4BCF /* MindMyLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5CD3F52C9077DA001D4BCF /* MindMyLib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B5CD3DE2C907189001D4BCF /* MindMyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindMyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B5CD3E12C907189001D4BCF /* MindMyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindMyAppApp.swift; sourceTree = "<group>"; };
-		9B5CD3E32C907189001D4BCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B5CD3E12C907189001D4BCF /* MindMyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindMyApp.swift; sourceTree = "<group>"; };
+		9B5CD3E32C907189001D4BCF /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9B5CD3E52C90718A001D4BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5CD3E82C90718A001D4BCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9B5CD3EF2C90719C001D4BCF /* MindMyLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MindMyLib; path = ../../MindMyLib; sourceTree = "<group>"; };
+		9B5CD3F22C90725E001D4BCF /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5CD3F62C9077DA001D4BCF /* MindMyLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +56,12 @@
 		9B5CD3E02C907189001D4BCF /* MindMyApp */ = {
 			isa = PBXGroup;
 			children = (
-				9B5CD3E12C907189001D4BCF /* MindMyAppApp.swift */,
-				9B5CD3E32C907189001D4BCF /* ContentView.swift */,
+				9B5CD3E12C907189001D4BCF /* MindMyApp.swift */,
+				9B5CD3F12C907228001D4BCF /* ViewModels */,
+				9B5CD3F02C9071E5001D4BCF /* Views */,
 				9B5CD3E52C90718A001D4BCF /* Assets.xcassets */,
 				9B5CD3E72C90718A001D4BCF /* Preview Content */,
+				9B5CD3EF2C90719C001D4BCF /* MindMyLib */,
 			);
 			path = MindMyApp;
 			sourceTree = "<group>";
@@ -65,6 +72,22 @@
 				9B5CD3E82C90718A001D4BCF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B5CD3F02C9071E5001D4BCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD3E32C907189001D4BCF /* ListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B5CD3F12C907228001D4BCF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD3F22C90725E001D4BCF /* ListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +106,9 @@
 			dependencies = (
 			);
 			name = MindMyApp;
+			packageProductDependencies = (
+				9B5CD3F52C9077DA001D4BCF /* MindMyLib */,
+			);
 			productName = MindMyApp;
 			productReference = 9B5CD3DE2C907189001D4BCF /* MindMyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 9B5CD3D52C907189001D4BCF;
+			packageReferences = (
+				9B5CD3F42C9077DA001D4BCF /* XCLocalSwiftPackageReference "../MindMyLib" */,
+			);
 			productRefGroup = 9B5CD3DF2C907189001D4BCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B5CD3E42C907189001D4BCF /* ContentView.swift in Sources */,
-				9B5CD3E22C907189001D4BCF /* MindMyAppApp.swift in Sources */,
+				9B5CD3E42C907189001D4BCF /* ListView.swift in Sources */,
+				9B5CD3E22C907189001D4BCF /* MindMyApp.swift in Sources */,
+				9B5CD3F32C90725E001D4BCF /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +374,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9B5CD3F42C9077DA001D4BCF /* XCLocalSwiftPackageReference "../MindMyLib" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../MindMyLib;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B5CD3F52C9077DA001D4BCF /* MindMyLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MindMyLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B5CD3D62C907189001D4BCF /* Project object */;
 }

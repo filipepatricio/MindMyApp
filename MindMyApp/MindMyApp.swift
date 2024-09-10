@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct MindMyAppApp: App {
+struct MindMyApp: App {
+    @StateObject var listViewModel: ListViewModel = .init()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
         }
     }
 }
