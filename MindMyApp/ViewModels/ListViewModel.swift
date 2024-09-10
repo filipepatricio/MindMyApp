@@ -16,6 +16,7 @@ class ListViewModel: ObservableObject {
 
     enum SortOptions {
         case title
+        case titleReversed
     }
 
     private let githubDataService = OrganizationsDataService()
@@ -26,7 +27,7 @@ class ListViewModel: ObservableObject {
         addSubscribers()
     }
 
-    func addSubscribers() {
+    private func addSubscribers() {
         $searchText
             .combineLatest(githubDataService.$organizations, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
@@ -35,6 +36,14 @@ class ListViewModel: ObservableObject {
                 self?.organizations = returnedOrganizations
             }
             .store(in: &cancellables)
+    }
+
+    func sortTitleToggle() {
+        if sortOption == .title {
+            sortOption = .titleReversed
+        } else {
+            sortOption = .title
+        }
     }
 
     private func filterAndSortOrganizations(text: String, organizations: Organizations, sort: SortOptions) -> Organizations {
@@ -60,6 +69,8 @@ class ListViewModel: ObservableObject {
         switch sort {
         case .title:
             organizations.sort(by: { $0.title.lowercased() < $1.title.lowercased() })
+        case .titleReversed:
+            organizations.sort(by: { $0.title.lowercased() > $1.title.lowercased() })
         }
     }
 }

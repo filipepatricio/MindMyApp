@@ -20,6 +20,14 @@ struct ListView: View {
                 }.listStyle(PlainListStyle())
             }
             .navigationTitle("Github Organizations")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: vm.sortTitleToggle,
+                           label: {
+                               Text("Sort alphabetically \(vm.sortOption == .title ? "▲" : "▼")")
+                           })
+                }
+            }
         }.searchable(text: $vm.searchText, prompt: "Search for organization...")
     }
 }
