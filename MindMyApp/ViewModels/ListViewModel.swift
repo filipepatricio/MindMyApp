@@ -13,20 +13,25 @@ class ListViewModel: ObservableObject {
     @Published var organizations: Organizations = []
     @Published var searchText = ""
     @Published var sortOption: SortOptions = .title
-
+    
+    @Published var favoriteOrganizations: Organizations = []
+    
     enum SortOptions {
         case title
         case titleReversed
     }
-
+    
     private let githubDataService = OrganizationsDataService()
-
+    
     private var cancellables = Set<AnyCancellable>()
-
+    
+    let favoritesKey: String = "favorites_list"
+    
     init() {
         addSubscribers()
+        getFavorites()
     }
-
+    
     private func addSubscribers() {
         $searchText
             .combineLatest(githubDataService.$organizations, $sortOption)
@@ -36,6 +41,39 @@ class ListViewModel: ObservableObject {
                 self?.organizations = returnedOrganizations
             }
             .store(in: &cancellables)
+    }
+    
+    private func getFavorites() {
+        guard
+            let data = UserDefaults.standard.data(forKey: favoritesKey),
+            let savedOrganizations = try? JSONDecoder().decode(Organizations.self, from: data)
+        else { return }
+        
+        favoriteOrganizations = savedOrganizations
+    }
+    
+    func addFavorite(organization: Organization) {
+        favoriteOrganizations.append(organization)
+        updateFavoriteList()
+    }
+    
+    func removeFavorite(organization: Organization) {
+        favoriteOrganizations.removeAll(where: { $0.id == organization.id })
+        updateFavoriteList()
+    }
+    
+    func updateFavoriteList() {
+        if let data = try? JSONEncoder().encode(favoriteOrganizations) {
+            UserDefaults.standard.set(data, forKey: favoritesKey)
+        }
+    }
+    
+    func isOrganizationFavorite(organization: Organization) -> Bool {
+        return favoriteOrganizations.contains(where: { $0.id == organization.id })
+    }
+    
+    func toggleFavorite(organization: Organization) {
+        isOrganizationFavorite(organization: organization) ? removeFavorite(organization: organization) : addFavorite(organization: organization)
     }
 
     func sortTitleToggle() {

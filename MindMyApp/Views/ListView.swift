@@ -13,9 +13,17 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                if vm.organizations.isEmpty {
+                    ProgressView()
+                }
                 List {
                     ForEach(vm.organizations) { organization in
-                        ListRowView(rowItem: organization)
+                        ListRowView(rowItem: organization, isFavorite: vm.isOrganizationFavorite(organization: organization))
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    vm.toggleFavorite(organization: organization)
+                                }
+                            }
                     }
                 }.listStyle(PlainListStyle())
             }
