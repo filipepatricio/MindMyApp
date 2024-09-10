@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct MindMyApp: App {
-    @StateObject var listViewModel: ListViewModel = .init()
+    @StateObject private var listViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
-            ListView()
+            ListView().environmentObject(listViewModel)
         }
     }
 }

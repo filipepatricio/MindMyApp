@@ -5,17 +5,26 @@
 //  Created by Filipe Patricio on 10/09/2024.
 //
 
+import Combine
 import Foundation
 import MindMyLib
 
 class ListViewModel: ObservableObject {
-    @Published var organizations: [String] = []
+    @Published var organizations: Organizations = []
+
+    private let githubDataService = OrganizationsDataService()
+
+    private var cancelables = Set<AnyCancellable>()
 
     init() {
-        getOrganizations()
+        addSubscribers()
     }
 
-    func getOrganizations() {
-        organizations = MindMyLib.GithubService().getOrganizations()
+    func addSubscribers() {
+        githubDataService.$organizations
+            .sink { [weak self] returnedOrganization in
+                self?.organizations = returnedOrganization
+            }
+            .store(in: &cancelables)
     }
 }

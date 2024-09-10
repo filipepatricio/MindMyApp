@@ -11,8 +11,8 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     var body: some View {
         VStack {
-            ForEach(listViewModel.organizations, id: \.self) { organization in
-                Text(organization)
+            ForEach(listViewModel.organizations) { organization in
+                Text(organization.login)
             }
         }
         .padding()
