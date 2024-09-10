@@ -14,6 +14,9 @@ struct ListRowView: View {
 
     var body: some View {
         HStack {
+            RowItemImageView(rowItem: rowItem)
+                .frame(width: 30, height: 30)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             Text(rowItem.title)
             Spacer()
             Image(systemName: isFavorite ? "star.fill" : "star")

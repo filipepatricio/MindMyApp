@@ -19,6 +19,9 @@
 		9B5CD4022C908BCC001D4BCF /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4012C908BCC001D4BCF /* RowItem.swift */; };
 		9B5CD40D2C909DF4001D4BCF /* MindMyLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5CD40C2C909DF4001D4BCF /* MindMyLib */; };
 		9B5CD40F2C909EB4001D4BCF /* DummyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD40E2C909EB4001D4BCF /* DummyModels.swift */; };
+		9B5CD4212C90B51F001D4BCF /* RowItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4202C90B51F001D4BCF /* RowItemImageView.swift */; };
+		9B5CD4232C90B535001D4BCF /* RowItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4222C90B535001D4BCF /* RowItemImageViewModel.swift */; };
+		9B5CD4252C90B5DE001D4BCF /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4242C90B5DE001D4BCF /* ImageDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		9B5CD3FF2C908B75001D4BCF /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		9B5CD4012C908BCC001D4BCF /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
 		9B5CD40E2C909EB4001D4BCF /* DummyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModels.swift; sourceTree = "<group>"; };
+		9B5CD4202C90B51F001D4BCF /* RowItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemImageView.swift; sourceTree = "<group>"; };
+		9B5CD4222C90B535001D4BCF /* RowItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemImageViewModel.swift; sourceTree = "<group>"; };
+		9B5CD4242C90B5DE001D4BCF /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +76,7 @@
 				9B5CD3E12C907189001D4BCF /* MindMyApp.swift */,
 				9B5CD3FA2C907BF4001D4BCF /* Services */,
 				9B5CD3F72C9079FF001D4BCF /* Models */,
-				9B5CD3F12C907228001D4BCF /* ViewModels */,
-				9B5CD3F02C9071E5001D4BCF /* Views */,
+				9B5CD41C2C90B4E0001D4BCF /* Core */,
 				9B5CD3E52C90718A001D4BCF /* Assets.xcassets */,
 				9B5CD3E72C90718A001D4BCF /* Preview Content */,
 			);
@@ -117,8 +122,44 @@
 			isa = PBXGroup;
 			children = (
 				9B5CD3FB2C907C03001D4BCF /* OrganizationsDataService.swift */,
+				9B5CD4242C90B5DE001D4BCF /* ImageDataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9B5CD41A2C90B4BB001D4BCF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD3F12C907228001D4BCF /* ViewModels */,
+				9B5CD3F02C9071E5001D4BCF /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9B5CD41C2C90B4E0001D4BCF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD41D2C90B4E4001D4BCF /* Components */,
+				9B5CD41A2C90B4BB001D4BCF /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9B5CD41D2C90B4E4001D4BCF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD41E2C90B4F7001D4BCF /* RowItemImage */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9B5CD41E2C90B4F7001D4BCF /* RowItemImage */ = {
+			isa = PBXGroup;
+			children = (
+				9B5CD4202C90B51F001D4BCF /* RowItemImageView.swift */,
+				9B5CD4222C90B535001D4BCF /* RowItemImageViewModel.swift */,
+			);
+			path = RowItemImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B5CD3FC2C907C03001D4BCF /* OrganizationsDataService.swift in Sources */,
+				9B5CD4232C90B535001D4BCF /* RowItemImageViewModel.swift in Sources */,
 				9B5CD3F92C907A06001D4BCF /* Organization.swift in Sources */,
 				9B5CD3E42C907189001D4BCF /* ListView.swift in Sources */,
+				9B5CD4212C90B51F001D4BCF /* RowItemImageView.swift in Sources */,
 				9B5CD40F2C909EB4001D4BCF /* DummyModels.swift in Sources */,
+				9B5CD4252C90B5DE001D4BCF /* ImageDataService.swift in Sources */,
 				9B5CD3E22C907189001D4BCF /* MindMyApp.swift in Sources */,
 				9B5CD3F32C90725E001D4BCF /* ListViewModel.swift in Sources */,
 				9B5CD4022C908BCC001D4BCF /* RowItem.swift in Sources */,
