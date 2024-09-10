@@ -19,25 +19,16 @@ class OrganizationsDataService {
 
     func getOrganizations() {
         do {
-            organizationSubscription = try MindMyLib.GithubService().getOrganizations()
+            organizationSubscription = try MindMyLib.ApiService().getOrganizations()
                 .decode(type: [Organization].self, decoder: JSONDecoder())
                 .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: handleCompletion,
+                .sink(receiveCompletion: MindMyLib.NetworkManager.handleCompletion,
                       receiveValue: { [weak self] returnedOrganizations in
                           self?.organizations = returnedOrganizations
                           self?.organizationSubscription?.cancel()
                       })
         }
         catch {
-            print(error.localizedDescription)
-        }
-    }
-
-    func handleCompletion(completion: Subscribers.Completion<Error>) {
-        switch completion {
-        case .finished:
-            break
-        case .failure(let error):
             print(error.localizedDescription)
         }
     }

@@ -26,7 +26,7 @@ import Foundation
 
 // MARK: - Organization
 
-struct Organization: Codable, Identifiable, RowItem {
+struct Organization: Codable, Identifiable, Hashable, RowItem {
     let title: String
     let id: Int
     let nodeID: String
@@ -34,7 +34,7 @@ struct Organization: Codable, Identifiable, RowItem {
     let issuesURL: String
     let membersURL, publicMembersURL: String
     let avatarURL: String
-    let description: String?
+    let localDescription: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -48,7 +48,16 @@ struct Organization: Codable, Identifiable, RowItem {
         case membersURL = "members_url"
         case publicMembersURL = "public_members_url"
         case avatarURL = "avatar_url"
-        case description
+        case localDescription = "description"
+    }
+
+    var description: String {
+        guard let description = localDescription,
+              !description.isEmpty
+        else {
+            return "No description"
+        }
+        return description
     }
 }
 

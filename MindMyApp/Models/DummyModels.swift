@@ -34,5 +34,5 @@ class DummyModels {
                                     membersURL: "https://api.github.com/orgs/errfree/members{/member}",
                                     publicMembersURL: "https://api.github.com/orgs/errfree/public_members{/member}",
                                     avatarURL: "https://avatars.githubusercontent.com/u/44?v=4",
-                                    description: nil)
+                                    localDescription: nil)
 }
