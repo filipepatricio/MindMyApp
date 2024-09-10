@@ -11,14 +11,16 @@ struct ListView: View {
     @EnvironmentObject var vm: ListViewModel
 
     var body: some View {
-        ZStack {
-            List {
-                ForEach(vm.organizations) { organization in
-                    ListRowView(rowItem: organization)
-                }
-            }.listStyle(PlainListStyle())
-        }
-        .navigationTitle("Github Organizations")
+        NavigationStack {
+            ZStack {
+                List {
+                    ForEach(vm.organizations) { organization in
+                        ListRowView(rowItem: organization)
+                    }
+                }.listStyle(PlainListStyle())
+            }
+            .navigationTitle("Github Organizations")
+        }.searchable(text: $vm.searchText, prompt: "Search for organization...")
     }
 }
 
