@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var listViewModel: ListViewModel
+    @EnvironmentObject var vm: ListViewModel
+
     var body: some View {
-        VStack {
-            ForEach(listViewModel.organizations) { organization in
-                Text(organization.login)
-            }
+        ZStack {
+            List {
+                ForEach(vm.organizations) { organization in
+                    ListRowView(rowItem: organization)
+                }
+            }.listStyle(PlainListStyle())
         }
-        .padding()
+        .navigationTitle("Github Organizations")
     }
 }
 
 #Preview {
-    ListView().environmentObject(ListViewModel())
+    NavigationView {
+        ListView()
+    }
+    .environmentObject(ListViewModel())
 }

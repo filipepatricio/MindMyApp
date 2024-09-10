@@ -26,8 +26,8 @@ import Foundation
 
 // MARK: - Organization
 
-struct Organization: Codable, Identifiable {
-    let login: String
+struct Organization: Codable, Identifiable, RowItem {
+    let title: String
     let id: Int
     let nodeID: String
     let url, reposURL, eventsURL, hooksURL: String
@@ -37,7 +37,8 @@ struct Organization: Codable, Identifiable {
     let description: String?
 
     enum CodingKeys: String, CodingKey {
-        case login, id
+        case id
+        case title = "login"
         case nodeID = "node_id"
         case url
         case reposURL = "repos_url"

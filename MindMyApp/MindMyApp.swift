@@ -12,7 +12,11 @@ struct MindMyApp: App {
     @StateObject private var listViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
-            ListView().environmentObject(listViewModel)
+            NavigationView {
+                ListView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(listViewModel)
         }
     }
 }
