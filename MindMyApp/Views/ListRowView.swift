@@ -22,5 +22,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(rowItem: Organization(title: "First organization", id: 1, nodeID: "1", url: "1", reposURL: "1", eventsURL: "1", hooksURL: "1", issuesURL: "1", membersURL: "1", publicMembersURL: "1", avatarURL: "1", description: "1"))
+    ListRowView(rowItem: DummyModels().organization)
 }
