@@ -11,6 +11,7 @@ import SwiftUI
 struct ListRowView: View {
     let rowItem: any RowItem
     let isFavorite: Bool
+    let onFavorite: () -> Void
 
     var body: some View {
         HStack {
@@ -21,6 +22,9 @@ struct ListRowView: View {
             Spacer()
             Image(systemName: isFavorite ? "star.fill" : "star")
                 .foregroundStyle(.yellow)
+                .onTapGesture {
+                    onFavorite()
+                }
         }
         .contentShape(Rectangle())
         .font(.title2)
@@ -29,5 +33,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(rowItem: DummyModels().organization, isFavorite: true)
+    ListRowView(rowItem: DummyModels().organization, isFavorite: true, onFavorite: {})
 }
