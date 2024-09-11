@@ -32,14 +32,14 @@ extension ListView {
     private var organizationList: some View {
         List {
             ForEach(vm.organizations) { organization in
-                ListRowView(rowItem: organization,
-                            isFavorite: vm.isOrganizationFavorite(organization: organization),
-                            onFavorite: { vm.toggleFavorite(organization: organization) })
-                    .overlay(
-                        NavigationLink(value: organization) {
-                            EmptyView()
-                        }.opacity(0)
-                    )
+                ZStack {
+                    NavigationLink(value: organization) {
+                        EmptyView()
+                    }.opacity(0)
+                    ListRowView(rowItem: organization,
+                                isFavorite: vm.isOrganizationFavorite(organization: organization),
+                                onFavorite: { vm.toggleFavorite(organization: organization) })
+                }
             }
         }
         .listStyle(PlainListStyle())

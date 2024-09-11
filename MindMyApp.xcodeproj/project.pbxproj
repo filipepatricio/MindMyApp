@@ -18,11 +18,11 @@
 		9B5CD4002C908B75001D4BCF /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD3FF2C908B75001D4BCF /* ListRowView.swift */; };
 		9B5CD4022C908BCC001D4BCF /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4012C908BCC001D4BCF /* RowItem.swift */; };
 		9B5CD40D2C909DF4001D4BCF /* MindMyLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5CD40C2C909DF4001D4BCF /* MindMyLib */; };
-		9B5CD40F2C909EB4001D4BCF /* DummyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD40E2C909EB4001D4BCF /* DummyModels.swift */; };
 		9B5CD4212C90B51F001D4BCF /* RowItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4202C90B51F001D4BCF /* RowItemImageView.swift */; };
 		9B5CD4232C90B535001D4BCF /* RowItemImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4222C90B535001D4BCF /* RowItemImageViewModel.swift */; };
 		9B5CD4252C90B5DE001D4BCF /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4242C90B5DE001D4BCF /* ImageDataService.swift */; };
 		9B5CD42B2C90BFD8001D4BCF /* OrganizationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD42A2C90BFD8001D4BCF /* OrganizationDetail.swift */; };
+		9B5CD4362C91A117001D4BCF /* DummyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CD4352C91A117001D4BCF /* DummyModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +36,12 @@
 		9B5CD3FB2C907C03001D4BCF /* OrganizationsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsDataService.swift; sourceTree = "<group>"; };
 		9B5CD3FF2C908B75001D4BCF /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		9B5CD4012C908BCC001D4BCF /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
-		9B5CD40E2C909EB4001D4BCF /* DummyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModels.swift; sourceTree = "<group>"; };
 		9B5CD4202C90B51F001D4BCF /* RowItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemImageView.swift; sourceTree = "<group>"; };
 		9B5CD4222C90B535001D4BCF /* RowItemImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemImageViewModel.swift; sourceTree = "<group>"; };
 		9B5CD4242C90B5DE001D4BCF /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 		9B5CD42A2C90BFD8001D4BCF /* OrganizationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetail.swift; sourceTree = "<group>"; };
+		9B5CD4302C9199AF001D4BCF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B5CD4352C91A117001D4BCF /* DummyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		9B5CD3D52C907189001D4BCF = {
 			isa = PBXGroup;
 			children = (
+				9B5CD4302C9199AF001D4BCF /* README.md */,
 				9B5CD3E02C907189001D4BCF /* MindMyApp */,
 				9B5CD3DF2C907189001D4BCF /* Products */,
 			);
@@ -113,9 +115,9 @@
 		9B5CD3F72C9079FF001D4BCF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9B5CD4352C91A117001D4BCF /* DummyModels.swift */,
 				9B5CD3F82C907A06001D4BCF /* Organization.swift */,
 				9B5CD4012C908BCC001D4BCF /* RowItem.swift */,
-				9B5CD40E2C909EB4001D4BCF /* DummyModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,11 +262,11 @@
 			files = (
 				9B5CD3FC2C907C03001D4BCF /* OrganizationsDataService.swift in Sources */,
 				9B5CD4232C90B535001D4BCF /* RowItemImageViewModel.swift in Sources */,
+				9B5CD4362C91A117001D4BCF /* DummyModels.swift in Sources */,
 				9B5CD3F92C907A06001D4BCF /* Organization.swift in Sources */,
 				9B5CD42B2C90BFD8001D4BCF /* OrganizationDetail.swift in Sources */,
 				9B5CD3E42C907189001D4BCF /* ListView.swift in Sources */,
 				9B5CD4212C90B51F001D4BCF /* RowItemImageView.swift in Sources */,
-				9B5CD40F2C909EB4001D4BCF /* DummyModels.swift in Sources */,
 				9B5CD4252C90B5DE001D4BCF /* ImageDataService.swift in Sources */,
 				9B5CD3E22C907189001D4BCF /* MindMyApp.swift in Sources */,
 				9B5CD3F32C90725E001D4BCF /* ListViewModel.swift in Sources */,
@@ -415,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.filipepatricio.MindMyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -444,7 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.filipepatricio.MindMyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
