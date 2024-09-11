@@ -28,7 +28,14 @@ class ImageDataService {
                 UIImage(data: data)
             }
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: MindMyLib.NetworkManager.handleCompletion,
+            .sink(receiveCompletion: { completion in
+                      switch completion {
+                      case .finished:
+                          break
+                      case .failure(let error):
+                          print(error.localizedDescription)
+                      }
+                  },
                   receiveValue: { [weak self] returnedImage in
                       guard let self = self, let downloadedImage = returnedImage else { return }
                       self.image = downloadedImage

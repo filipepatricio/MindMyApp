@@ -22,7 +22,14 @@ class OrganizationsDataService {
             organizationSubscription = try MindMyLib.ApiService().getOrganizations()
                 .decode(type: [Organization].self, decoder: JSONDecoder())
                 .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: MindMyLib.NetworkManager.handleCompletion,
+                .sink(receiveCompletion: { completion in
+                          switch completion {
+                          case .finished:
+                              break
+                          case .failure(let error):
+                              print(error.localizedDescription)
+                          }
+                      },
                       receiveValue: { [weak self] returnedOrganizations in
                           self?.organizations = returnedOrganizations
                           self?.organizationSubscription?.cancel()
