@@ -1,5 +1,16 @@
 #  MindMyApp
 
+Package Dependencies: MindMyLib - https://github.com/filipepatricio/MindMyLib
+
+Github Organizations Listing
+
+## Features
+
+- Sorting alphabetically (+ reversed)
+- Search organizations
+- Set favorite organizations
+- Organization detail view (title, image and description)
+
 ## Architecture
 
 ### MVVM - Model View ViewModel
@@ -39,9 +50,7 @@ The project also depends from an external Package/Lib "MindMyLib" which is respo
 ### Extra features:
 
 - Display the organization avatar picture: ✅
-- Unit tests for the library code: 
-    I build a simple test, mocking the NetworkManager, but I couldn't run the test. 
-    (Building an external package was a new thing for me, and I couldn't figure out how to run package tests due the lack of time)
+- Unit test for the library code: ✅
 - Network status handling: ✅ (MindMyLib.NetworkManager)
 - Brief description of the architecture used: ✅
 - Brief description of the project structure: ✅ 
@@ -50,5 +59,5 @@ The project also depends from an external Package/Lib "MindMyLib" which is respo
 ### Future improvements:
 
 - Cache avatar images in memory (to not load everytime that is lazy loading)
-- Build and Run MindMyLib Unit tests 
+- Add more details to organization details
 
