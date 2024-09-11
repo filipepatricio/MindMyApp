@@ -12,6 +12,7 @@ struct ListRowView: View {
     let rowItem: any RowItem
     let isFavorite: Bool
     let onFavorite: () -> Void
+    @State var animate = false
 
     var body: some View {
         HStack {
@@ -22,8 +23,13 @@ struct ListRowView: View {
             Spacer()
             Image(systemName: isFavorite ? "star.fill" : "star")
                 .foregroundStyle(.yellow)
+                .scaleEffect(animate ? 1.5 : 1)
                 .onTapGesture {
                     onFavorite()
+                    animate.toggle()
+                    withAnimation(.easeInOut) {
+                        animate.toggle()
+                    }
                 }
         }
         .contentShape(Rectangle())
