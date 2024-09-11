@@ -34,3 +34,21 @@ The project is organized with the following structure :
 This struct help us to organize ViewModels and View into different main features (e.g. Home, OrganizationDetail, etc.).
 
 The project also depends from an external Package/Lib "MindMyLib" which is responsible for providing the external network api endpoint requests
+
+
+### Extra features:
+
+- Display the organization avatar picture: ✅
+- Unit tests for the library code: 
+    I build a simple test, mocking the NetworkManager, but I couldn't run the test. 
+    (Building an external package was a new thing for me, and I couldn't figure out how to run package tests due the lack of time)
+- Network status handling: ✅ (MindMyLib.NetworkManager)
+- Brief description of the architecture used: ✅
+- Brief description of the project structure: ✅ 
+    
+
+### Future improvements:
+
+- Cache avatar images in memory (to not load everytime that is lazy loading)
+- Build and Run MindMyLib Unit tests 
+
